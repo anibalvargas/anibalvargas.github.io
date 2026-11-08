@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aníbal Vargas | Artista musical</title>
+  <meta name="description" content="Sitio oficial de Aníbal Vargas. Baladas pop románticas, nocturnas y nostálgicas." />
+  <meta name="theme-color" content="#050b16" />
+  <style>
+    :root {
+      --bg: #030712;
+      --bg-soft: #0b1220;
+      --card: rgba(255,255,255,0.06);
+      --card-strong: rgba(255,255,255,0.10);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --line: rgba(255,255,255,0.10);
+      /* Actualizado a Azul Marino con Glow */
+      --accent: #1e40af;
+      --accent-2: #1e3a8a;
+      --accent-3: #93c5fd;
+      --shadow: 0 20px 60px rgba(0,0,0,0.42);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(30,64,175,0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(30,58,138,0.10), transparent 22%),
+        linear-gradient(180deg, #02050d 0%, #050b16 38%, #08111f 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(3,7,18,0.82);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 74px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .brand strong {
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+    }
+
+    .brand span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      font-size: 0.96rem;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    /* Estilo de Botón Primario: Azul Marino con Glow */
+    .btn-primary {
+      background: linear-gradient(135deg, #1e40af, #0f172a);
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      box-shadow: 0 0 20px rgba(30, 64, 175, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 28px rgba(59, 130, 246, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      border-color: rgba(147, 197, 253, 0.7);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 82px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .panel,
+    .music-card,
+    .link-card,
+    .about-card,
+    .contact-card,
+    .footer-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 230px;
+      height: 230px;
+      background: radial-gradient(circle, rgba(30,64,175,0.22), transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(30,64,175,0.15);
+      border: 1px solid rgba(96,165,250,0.30);
+      color: #bfdbfe;
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .hero-copy p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 64ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .hero-card {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cover-art {
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(8,17,31,0.12), rgba(8,17,31,0.48)),
+        url('hero.jpg') center/cover no-repeat;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .cover-label {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 18px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: end;
+    }
+
+    .cover-label .artist {
+      font-size: 0.95rem;
+      color: #ede9fe;
+      text-transform: lowercase;
+      text-align: right;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .release-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 4px 4px 0;
+    }
+
+    .release-meta small {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.55rem, 3vw, 2.4rem);
+      letter-spacing: -0.03em;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 62ch;
+      line-height: 1.7;
+    }
+
+    .music-grid,
+    .links-grid,
+    .about-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .music-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .links-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .about-grid { grid-template-columns: 1fr 1fr; }
+
+    .music-card,
+    .link-card,
+    .about-card,
+    .contact-card,
+    .footer-card,
+    .panel {
+      padding: 22px;
+    }
+
+    .music-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      overflow: hidden;
+    }
+
+    .music-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .music-badge,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(30,64,175,0.15);
+      border: 1px solid rgba(96,165,250,0.30);
+      color: #bfdbfe;
+      font-size: 0.82rem;
+    }
+
+    .music-card h3,
+    .link-card h3,
+    .about-card h3,
+    .contact-card h3,
+    .panel h3 {
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .music-card p,
+    .link-card p,
+    .about-card p,
+    .contact-card p,
+    .panel p,
+    .footer-card p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .music-actions,
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .embed-wrap {
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .youtube-panel {
+      background:
+        radial-gradient(circle at top left, rgba(30,64,175,0.12), transparent 28%),
+        linear-gradient(180deg, rgba(7,12,22,0.98), rgba(10,18,32,0.96));
+      border: 1px solid rgba(30,64,175,0.35);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.42), 0 0 25px rgba(30,64,175,0.15);
+    }
+
+    .player-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .player-heading h3 {
+      font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+      margin: 5px 0 4px;
+      letter-spacing: -0.035em;
+    }
+
+    .player-kicker {
+      color: #93c5fd;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .track-count {
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(30,64,175,0.15);
+      border: 1px solid rgba(96,165,250,0.28);
+      color: #bfdbfe;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .now-playing {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-wrap: wrap;
+      padding: 11px 14px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(96,165,250,0.22);
+      border-radius: 14px;
+      background: linear-gradient(90deg, rgba(30,64,175,0.2), rgba(255,255,255,0.025));
+      color: #bfdbfe;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+
+    .now-playing strong {
+      color: #fff;
+      font-size: 0.9rem;
+      letter-spacing: 0;
+      margin-left: 3px;
+    }
+
+    .playing-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #60a5fa;
+      box-shadow: 0 0 12px rgba(96,165,250,0.9);
+    }
+
+    .embed-wrap {
+      box-shadow: 0 16px 44px rgba(0,0,0,0.34), 0 0 28px rgba(30,64,175,0.12);
+    }
+
+    .playlist-item {
+      text-align: left;
+      min-width: 0;
+    }
+
+    .playlist-item span {
+      line-height: 1.35;
+    }
+
+    .playlist-item.active {
+      box-shadow: inset 3px 0 0 #60a5fa, 0 8px 22px rgba(30,64,175,0.2);
+    }
+
+    @media (max-width: 760px) {
+      .player-heading {
+        align-items: flex-start;
+      }
+      .track-count {
+        font-size: 0.72rem;
+      }
+    }
+
+    .playlist-container {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+    }
+
+    .playlist-list {
+      max-height: 480px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-right: 6px;
+    }
+
+    .playlist-list::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .playlist-list::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+    }
+
+    .playlist-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .playlist-item:hover,
+    .playlist-item.active {
+      background: rgba(30,64,175,0.22);
+      border-color: rgba(96,165,250,0.52);
+      box-shadow: 0 0 15px rgba(30,64,175,0.2);
+    }
+
+    .playlist-item img {
+      width: 54px;
+      aspect-ratio: 16/9;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .playlist-item span {
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .youtube-note {
+      color: #bfdbfe;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    iframe {
+      width: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .link-card {
+      min-height: 168px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .link-card .arrow {
+      font-size: 1.25rem;
+      color: #bfdbfe;
+    }
+
+    .about-card ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .contact-card {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .contact-pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    .footer {
+      padding: 12px 0 36px;
+    }
+
+    .footer-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+    }
+
+    /* Estilos para el contador de visitas */
+    .visitor-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+    }
+    .visitor-counter strong {
+      color: var(--text);
+      font-family: monospace;
+      font-size: 0.95rem;
+    }
+
+    .muted { color: var(--muted); }
+
+    @media (max-width: 1050px) {
+      .hero-grid,
+      .about-grid,
+      .contact-card,
+      .music-grid,
+      .links-grid,
+      .playlist-container {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        padding: 10px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero { padding-top: 42px; }
+      .hero-copy, .hero-card, .music-card, .link-card, .about-card, .contact-card, .footer-card, .panel {
+        padding: 18px;
+        border-radius: 20px;
+      }
+      .nav-links { gap: 14px; }
+      .section-header { align-items: flex-start; flex-direction: column; }
+    }
+
+    button.playlist-item {
+      width: 100%;
+      font: inherit;
+      color: var(--text);
+      appearance: none;
+    }
+    .playlist-list { max-height: 480px; }
+    .playlist-item img { flex: 0 0 auto; width: 72px; }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#inicio" class="brand">
+        <strong>Aníbal Vargas</strong>
+        <span>balada pop romántica · nocturna · nostálgica</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#presentacion">Presentación</a>
+        <a href="#musica">Música</a>
+        <a href="#playlist">Playlist</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">🌙 canciones para escuchar de noche y sentir de verdad</div>
+          <h1>Baladas que hablan<br />desde el corazón.</h1>
+          <p>
+            Soy <strong>Aníbal Vargas</strong>. Hago música romántica con un aire nocturno, nostálgico y cercano.
+            Mis canciones nacen de esa mezcla entre ternura, memoria y súplica amorosa: melodías para quien todavía siente,
+            recuerda y no quiere callarse lo que lleva dentro.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.youtube.com/@anibal_vargas" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            <a class="btn btn-secondary" href="#playlist">Descubrir lanzamientos</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>sonido</strong>
+              <span>balada pop romántica con atmósfera nocturna</span>
+            </div>
+            <div class="stat">
+              <strong>emoción</strong>
+              <span>ternura, nostalgia y honestidad emocional</span>
+            </div>
+            <div class="stat">
+              <strong>escúchalo aquí</strong>
+              <span>YouTube, Instagram, Spotify y lanzamientos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="cover-art" role="img" aria-label="Aníbal Vargas con su guitarra acústica en su habitación">
+            <div class="cover-label">
+              <div class="artist">Aníbal Vargas</div>
+            </div>
+          </div>
+
+          <div class="release-meta">
+            <small>
+              Aníbal Vargas sentado en su habitación con su guitarra acústica negra, rodeado de luz natural cálida y un ambiente tranquilo, el mismo espacio íntimo donde nacen sus canciones y donde la música se siente más cercana.
+            </small>
+            <a class="btn btn-secondary" href="https://www.youtube.com/@anibal_vargas/releases" target="_blank" rel="noopener noreferrer">Ver lanzamientos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="presentacion">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Video de presentación</h2>
+            <p>
+              Si quieres conocer más de cerca el proyecto, aquí puedes ver mi video de presentación y entrar de forma más personal al universo de Aníbal Vargas.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3 style="margin-bottom: 10px;">Mira mi presentación</h3>
+          <p class="muted" style="margin-bottom: 14px;">
+            Un video para presentarte mi canal, mi identidad artística y el tipo de música que hago.
+          </p>
+          <div class="embed-wrap">
+            <iframe
+              height="480"
+              src="https://www.youtube.com/embed/9jvw4FoqalE"
+              title="Video de presentación de Aníbal Vargas"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div style="margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="https://youtu.be/9jvw4FoqalE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="musica">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Música destacada</h2>
+            <p>
+              Una selección para entrar a mi universo musical: canciones románticas, nocturnas y emocionales.
+            </p>
+          </div>
+        </div>
+
+        <div class="music-grid">
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/Nm3PUA6A9Jw/hqdefault.jpg" alt="Noche Tranquila (Piano Version)" />
+            <span class="music-badge">🎹 Piano Version</span>
+            <h3>Noche Tranquila (Piano Version)</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/Nm3PUA6A9Jw" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/5eI4-TZNPms/hqdefault.jpg" alt="Estar bien (Piano versión)" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Estar bien (Piano versión)</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/5eI4-TZNPms" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/ic24l3Qr2hQ/hqdefault.jpg" alt="Feliz Día Mamá" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Feliz Día Mamá</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/ic24l3Qr2hQ" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/dMOoHw_J89Y/hqdefault.jpg" alt="Inamorata - Aesthetic Version" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Inamorata - Aesthetic Version</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/dMOoHw_J89Y" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/lBzdNScYDEU/hqdefault.jpg" alt="Amor Obsesivo" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Amor Obsesivo</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/lBzdNScYDEU" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/GRWJAP-vD8A/hqdefault.jpg" alt="Un Día en el Parque" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Un Día en el Parque</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/GRWJAP-vD8A" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/dLLAAz0laKc/hqdefault.jpg" alt="Te Quieres Casar Conmigo" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Te Quieres Casar Conmigo</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/dLLAAz0laKc" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/xOKew8yXDHY/hqdefault.jpg" alt="Contigo Soy Invencible" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Contigo Soy Invencible</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/xOKew8yXDHY" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/SQlqw-b59j4/hqdefault.jpg" alt="Nostalgia" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Nostalgia</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/SQlqw-b59j4" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/8CMJj_5fJqM/hqdefault.jpg" alt="Sueño Profundo" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Sueño Profundo</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/8CMJj_5fJqM" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/SKfTuzd05_s/hqdefault.jpg" alt="Noche Tranquila" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Noche Tranquila</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/SKfTuzd05_s" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/ySdkqubrLcI/hqdefault.jpg" alt="Cuidaré de Ti 💖" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Cuidaré de Ti 💖</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/ySdkqubrLcI" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/qUjwMxKj47g/hqdefault.jpg" alt="La Promesa" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>La Promesa</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/qUjwMxKj47g" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/EwWWd1zmjpk/hqdefault.jpg" alt="Tu Día de Gracia" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>Tu Día de Gracia</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/EwWWd1zmjpk" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/kqPsp3sApEU/hqdefault.jpg" alt="La Cometa" />
+            <span class="music-badge">🎶 Canción</span>
+            <h3>La Cometa</h3>
+            <p>Una muestra de mi música reciente, cargada de melodía y sentimiento para escuchar en momentos íntimos.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/kqPsp3sApEU" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/hW-Exgyz6NY/hqdefault.jpg" alt="💜 Espero Tu Respuesta" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>💜 Espero Tu Respuesta</h3>
+            <p>Nuevo lanzamiento. Una balada íntima cargada de sentimiento.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/hW-Exgyz6NY" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/qZ4lVP4p-JY/hqdefault.jpg" alt="Mi Persona Especial" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>Mi Persona Especial</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/qZ4lVP4p-JY" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/C6K5VouEaxw/hqdefault.jpg" alt="Ángel" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>Ángel</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/C6K5VouEaxw" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/OkyAmN3wco8/hqdefault.jpg" alt="La Mujer Más Linda de España" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>La Mujer Más Linda de España</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/OkyAmN3wco8" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/6n7BPyXKUK8/hqdefault.jpg" alt="Feliz Halloween 🎃 | Instrumental de Terror y Misterio" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>Feliz Halloween 🎃 | Instrumental de Terror y Misterio</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/6n7BPyXKUK8" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/Rjhk1IL-6P0/hqdefault.jpg" alt="Contigo Hasta las Estrellas ✨ | Balada Romántica dedicada a Carla Maronda" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>Contigo Hasta las Estrellas ✨ | Balada Romántica dedicada a Carla Maronda</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/Rjhk1IL-6P0" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/_xaJd9XuaNo/hqdefault.jpg" alt="Un vínculo para siempre 🤍 | Instrumental de guitarra" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>Un vínculo para siempre 🤍 | Instrumental de guitarra</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/_xaJd9XuaNo" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/HgDHtQO0iHU/hqdefault.jpg" alt="Llévame a la Cima 🏙️✨" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>Llévame a la Cima 🏙️✨</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/HgDHtQO0iHU" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/Fth_xvSl_Lc/hqdefault.jpg" alt="Sueño Profundo 🌙 | Piano Íntimo y Emotivo" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>Sueño Profundo 🌙 | Piano Íntimo y Emotivo</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/Fth_xvSl_Lc" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/U7fQkJLBHcA/hqdefault.jpg" alt="Labios Rosas (Video Oficial con Letra) | Reggaetón Romántico" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>Labios Rosas (Video Oficial con Letra) | Reggaetón Romántico</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/U7fQkJLBHcA" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/1LFHF4gccV4/hqdefault.jpg" alt="Labios Rosas (Instrumental) | Reggaetón Romántico" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>Labios Rosas (Instrumental) | Reggaetón Romántico</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/1LFHF4gccV4" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+
+          <article class="music-card">
+            <img class="music-thumb" src="https://img.youtube.com/vi/uPQkakWiLqQ/hqdefault.jpg" alt="La Mujer de Mis Sueños ❤️" loading="lazy" />
+            <span class="music-badge">✨ Nuevo lanzamiento</span>
+            <h3>La Mujer de Mis Sueños ❤️</h3>
+            <p>Una nueva pieza de mi universo musical. Escúchala y descubre su atmósfera.</p>
+            <div class="music-actions">
+              <a class="btn btn-primary" href="https://youtu.be/uPQkakWiLqQ" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="playlist">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Playlist</h2>
+            <p>
+              Elige cualquier canción de la lista para reproducirla inmediatamente.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel youtube-panel">
+          <div class="player-heading">
+            <div>
+              <span class="player-kicker">ANÍBAL VARGAS · REPRODUCTOR</span>
+              <h3>Escucha mi música</h3>
+              <p class="youtube-note">Selecciona una canción y se reproducirá aquí mismo.</p>
+            </div>
+            <span class="track-count" id="track-count">27 canciones</span>
+          </div>
+          <div class="now-playing">
+            <span class="playing-dot"></span>
+            <span>REPRODUCIENDO</span>
+            <strong id="now-playing-title">Mi Persona Especial</strong>
+          </div>
+          <div class="playlist-container">
+            <div class="embed-wrap">
+              <iframe
+                id="main-player"
+                height="480"
+                src="https://www.youtube.com/embed/qZ4lVP4p-JY?autoplay=0"
+                title="Reproductor de YouTube - Aníbal Vargas"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="playlist-list" id="playlist-items">
+              <!-- La lista interactiva se genera automáticamente desde JS -->
+            </div>
+          </div>
+          <div style="margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="https://www.youtube.com/@anibal_vargas" target="_blank" rel="noopener noreferrer">Ir al canal de YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Plataformas</h2>
+            <p>
+              Encuentra mi música, mis visuales y mis lanzamientos en los espacios donde comparto este proyecto.
+            </p>
+          </div>
+        </div>
+
+        <div class="links-grid">
+          <a class="link-card" href="https://open.spotify.com/user/im0hb56341foca5u6hd415g5p?si=b6dbaaa70bf54af5" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="pill">Spotify</div>
+              <h3 style="margin-top: 14px;">Escuchar catálogo</h3>
+              <p>Perfil de Spotify para seguir mi música y proyectos.</p>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="link-card" href="https://www.youtube.com/@anibal_vargas" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="pill">YouTube</div>
+              <h3 style="margin-top: 14px;">Canal oficial</h3>
+              <p>Videos, canciones, visuales y estrenos dentro del universo de Aníbal Vargas.</p>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="link-card" href="https://www.instagram.com/anibalvargasmusica/" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="pill">Instagram</div>
+              <h3 style="margin-top: 14px;">Visuales y novedades</h3>
+              <p>Portadas, avances, estética del proyecto y presencia visual más cercana.</p>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="link-card" href="https://www.youtube.com/@anibal_vargas/releases" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="pill">Lanzamientos</div>
+              <h3 style="margin-top: 14px;">Últimos estrenos</h3>
+              <p>Todas mis publicaciones recientes en un solo lugar, directo desde YouTube.</p>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Sobre mí</h2>
+          </div>
+        </div>
+        <div class="panel about-card">
+          <p class="muted">
+            Soy Aníbal Vargas, artista musical. Mi sonido va entre la balada pop romántica, lo nocturno y lo nostálgico:
+            canciones pensadas para escuchar con calma y sentir de verdad.
+          </p>
+          <ul>
+            <li>Balada pop romántica con atmósfera nocturna</li>
+            <li>Versiones en piano e instrumentales de guitarra</li>
+            <li>Nuevos lanzamientos en YouTube</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="panel contact-card">
+          <div>
+            <h2>Contacto</h2>
+            <p class="muted">Sígueme en mis redes y escríbeme por ahí.</p>
+            <div class="contact-list">
+              <a class="contact-pill" href="https://www.instagram.com/anibalvargasmusica/" target="_blank" rel="noopener noreferrer">Instagram · @anibalvargasmusica</a>
+              <a class="contact-pill" href="https://www.youtube.com/@anibal_vargas" target="_blank" rel="noopener noreferrer">YouTube · @anibal_vargas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="panel footer-card">
+        <span class="muted">© <span id="year"></span> Aníbal Vargas</span>
+        <span class="visitor-counter">Visitas: <strong id="visit-count">—</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const tracks = [
+      {
+            "id": "qZ4lVP4p-JY",
+            "title": "Mi Persona Especial"
+      },
+      {
+            "id": "Nm3PUA6A9Jw",
+            "title": "Noche Tranquila (Piano Version)"
+      },
+      {
+            "id": "5eI4-TZNPms",
+            "title": "Estar bien (Piano versión)"
+      },
+      {
+            "id": "ic24l3Qr2hQ",
+            "title": "Feliz Día Mamá"
+      },
+      {
+            "id": "dMOoHw_J89Y",
+            "title": "Inamorata - Aesthetic Version"
+      },
+      {
+            "id": "lBzdNScYDEU",
+            "title": "Amor Obsesivo"
+      },
+      {
+            "id": "GRWJAP-vD8A",
+            "title": "Un Día en el Parque"
+      },
+      {
+            "id": "dLLAAz0laKc",
+            "title": "Te Quieres Casar Conmigo"
+      },
+      {
+            "id": "xOKew8yXDHY",
+            "title": "Contigo Soy Invencible"
+      },
+      {
+            "id": "SQlqw-b59j4",
+            "title": "Nostalgia"
+      },
+      {
+            "id": "8CMJj_5fJqM",
+            "title": "Sueño Profundo"
+      },
+      {
+            "id": "SKfTuzd05_s",
+            "title": "Noche Tranquila"
+      },
+      {
+            "id": "ySdkqubrLcI",
+            "title": "Cuidaré de Ti 💖"
+      },
+      {
+            "id": "qUjwMxKj47g",
+            "title": "La Promesa"
+      },
+      {
+            "id": "EwWWd1zmjpk",
+            "title": "Tu Día de Gracia"
+      },
+      {
+            "id": "kqPsp3sApEU",
+            "title": "La Cometa"
+      },
+      {
+            "id": "hW-Exgyz6NY",
+            "title": "💜 Espero Tu Respuesta"
+      },
+      {
+            "id": "C6K5VouEaxw",
+            "title": "Ángel"
+      },
+      {
+            "id": "OkyAmN3wco8",
+            "title": "La Mujer Más Linda de España"
+      },
+      {
+            "id": "6n7BPyXKUK8",
+            "title": "Feliz Halloween 🎃 | Instrumental de Terror y Misterio"
+      },
+      {
+            "id": "Rjhk1IL-6P0",
+            "title": "Contigo Hasta las Estrellas ✨ | Balada Romántica dedicada a Carla Maronda"
+      },
+      {
+            "id": "_xaJd9XuaNo",
+            "title": "Un vínculo para siempre 🤍 | Instrumental de guitarra"
+      },
+      {
+            "id": "HgDHtQO0iHU",
+            "title": "Llévame a la Cima 🏙️✨"
+      },
+      {
+            "id": "Fth_xvSl_Lc",
+            "title": "Sueño Profundo 🌙 | Piano Íntimo y Emotivo"
+      },
+      {
+            "id": "U7fQkJLBHcA",
+            "title": "Labios Rosas (Video Oficial con Letra) | Reggaetón Romántico"
+      },
+      {
+            "id": "1LFHF4gccV4",
+            "title": "Labios Rosas (Instrumental) | Reggaetón Romántico"
+      },
+      {
+            "id": "uPQkakWiLqQ",
+            "title": "La Mujer de Mis Sueños ❤️"
+      }
+];
+
+    const player = document.getElementById('main-player');
+    const list = document.getElementById('playlist-items');
+    const nowTitle = document.getElementById('now-playing-title');
+
+    function selectTrack(index, autoplay) {
+      const t = tracks[index];
+      player.src = 'https://www.youtube.com/embed/' + t.id + '?rel=0' + (autoplay ? '&autoplay=1' : '');
+      nowTitle.textContent = t.title;
+      list.querySelectorAll('.playlist-item').forEach((el, i) => el.classList.toggle('active', i === index));
+    }
+
+    tracks.forEach((t, i) => {
+      const item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'playlist-item' + (i === 0 ? ' active' : '');
+      item.innerHTML = '<img loading="lazy" alt="" src="https://img.youtube.com/vi/' + t.id + '/mqdefault.jpg"><span></span>';
+      item.querySelector('span').textContent = t.title;
+      item.addEventListener('click', () => {
+        selectTrack(i, true);
+        if (window.matchMedia('(max-width: 1050px)').matches) {
+          player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+      list.appendChild(item);
+    });
+
+    document.getElementById('track-count').textContent = tracks.length + ' canciones';
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contador de visitas (si el servicio no responde, se deja el guion)
+    fetch('https://api.counterapi.dev/v1/anibalbuild-github-io/visitas/up')
+      .then(r => r.json())
+      .then(d => { if (d && d.count != null) document.getElementById('visit-count').textContent = d.count; })
+      .catch(() => {});
+  </script>
+</body>
+</html>
